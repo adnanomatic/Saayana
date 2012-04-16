@@ -1,0 +1,591 @@
+/*
+Theme Name: Toolbox
+Theme URI: http://wordpress.org/extend/themes/toolbox
+Author: Automattic
+Author URI: http://automattic.com/
+Description: A semantic, HTML5, canvas for CSS artists and an ultra-minimal set of super-clean templates for your own WordPress theme development.
+Version: 1.4
+License: GNU General Public License
+License URI: license.txt
+Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script|Merriweather:300);
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+/* =Structure
+-------------------------------------------------------------- */
+
+
+body {
+	background-color: #eee;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+}
+#page {
+	border: 1px solid #ccc;
+	display: block;
+	width:960px;
+	margin: -20px auto -10px auto;
+	background-color: #fff;
+	box-shadow: 0px 10px 5px #aaa;
+}
+#primary {
+	float: left;
+	margin: 0 -300px 0 0;
+	width: 300px;
+}
+#content {
+	margin: 0 -300px 50px 0;
+	padding-left: 30px;
+}
+#main .widget-area {
+	float: right;
+	overflow: hidden;
+	padding-right: 30px;
+	width: 250px;
+}
+#colophon {
+background-color: #ddd;
+	clear: both;
+	display: block;
+	margin: auto;
+	width: 960px;
+	padding: 2em 0 2em 0;
+	text-align: center;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+/* Increase the size of the content area for templates without sidebars */
+.full-width #content,
+.image-attachment #content,
+.error404 #content {
+	margin: 0;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text,
+.assistive-text {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+}
+.alignright {
+	display: inline;
+	float: right;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-title {
+	font-size: 70px;
+	font-weight: 100;
+	padding:50px 0px 50px 26px;
+}
+
+#site-title a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+}
+
+#site-title a:hover {
+	color: #ff0000;
+   -webkit-transition:color .5s ease-in;  
+   -moz-transition:color .5s ease-in;  
+   -o-transition:color .5s ease-in;  
+   transition:color .5s ease-in;
+}
+	
+#site-description {
+	font-size: 20px;
+	font-weight: normal;
+	padding-left: 27px;
+	margin: -95px 0 70px 3px;
+}
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+#access {
+	background: rgb(238,238,238); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(221,221,221,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(221,221,221,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+	display: block;
+	float: left;
+	margin: 0 0 30px 1px;
+	width: 100%;
+}
+#access ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+#access li {
+	float: left;
+	
+	position: relative;
+}
+#access a {
+	color:#000; 
+	background: rgb(238,238,238); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(221,221,221,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(221,221,221,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+
+	-webkit-transition-property:color, background-color; 
+	-webkit-transition-duration: .3s, .3s; 
+	-webkit-transition-timing-function: linear, ease-in;
+	display: block;
+	line-height: 2em;
+	padding: 0 1em;
+	text-shadow: 0 1px 0 #fff;
+	text-decoration: none;
+}
+
+#access a:hover {
+	color:#fff;
+	text-shadow: 0 -1px 0 #000;
+}
+
+#access ul ul {
+	background: #ddd;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+	display: none;
+	float: left;
+	position: absolute;
+	top: 2em;
+	left: 0;
+	z-index: 99999;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	line-height: 1em;
+	padding: .5em .5em .5em 1em;
+	width: 10em;
+	height: auto;
+}
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: #aaa;
+
+}
+#access ul ul a:hover {
+	background: #aaa;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+
+
+/* =Content
+-------------------------------------------------------------- */
+
+.sticky {
+}
+.entry-meta {
+	clear: both;
+	display: block;
+	margin: -5px 0 20px 0;
+	font-size: 13px;
+	color: #333;
+	line-height: 1.6em;
+}
+
+.entry-meta a {
+	color: #aaa;
+	text-decoration: none;
+	border-bottom: 1px solid #aaa;
+}
+
+.entry-meta a:hover {
+	color: #ff0000;
+   -webkit-transition:color .5s ease-in;  
+   -moz-transition:color .5s ease-in;  
+   -o-transition:color .5s ease-in;  
+   transition:color .5s ease-in;
+}
+
+.entry-title {
+	font-size: 30px;
+}
+
+.entry-title a {
+	text-decoration:none;
+	color: #333;
+	}
+	
+.entry-title a:hover {
+	color: #ff0000;
+   -webkit-transition:color .5s ease-in;  
+   -moz-transition:color .5s ease-in;  
+   -o-transition:color .5s ease-in;  
+   transition:color .5s ease-in;
+}
+
+.entry-content {
+	letter-spacing: 0.1px;
+	line-height: 1.7em;
+	word-spacing: 1px;
+	color: #333;
+	margin-bottom: 60px;
+	font-size: 15px;
+	}
+	
+.entry-content a {
+	border-bottom: 1px solid #aaa;
+	color: #aaa;
+	text-decoration: none;
+}
+
+.entry-content a:hover {
+	color:#ff0000;
+	-webkit-transition:color .5s ease-in;  
+   -moz-transition:color .5s ease-in;  
+   -o-transition:color .5s ease-in;  
+   transition:color .5s ease-in;
+}
+
+.single-author .entry-meta .byline {
+	display: none;
+}
+#content nav {
+	display: none;
+	overflow: hidden;
+}
+#content nav .nav-previous {
+	float: left;
+	width: 50%;
+}
+#content nav .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#content #nav-above {
+	display: none;
+}
+.paged #content #nav-above,
+.single #content #nav-above {
+	display: none;
+}
+#nav-below {
+	margin: 1em 0 0;
+}
+.page-link {
+	clear: both;
+	margin: 0 0 1em;
+}
+.page .edit-link {
+	clear: both;
+	display: block;
+}
+
+/* 404 page */
+.error404 .widget {
+	float: left;
+	width: 33%;
+}
+.error404 .widget .widgettitle,
+.error404 .widget ul {
+	margin-right: 1em;
+}
+.error404 .widget_tag_cloud {
+	clear: both;
+	float: none;
+	width: 100%;
+}
+
+/* Notices */
+.post .notice,
+.error404 #searchform {
+	background: #eee;
+	display: block;
+	padding: 1em;
+}
+
+/* Image Attachments */
+.image-attachment div.entry-meta {
+	float: left;
+}
+.image-attachment nav {
+	float: right;
+	margin: 0 0 1em 0;
+}
+.image-attachment .entry-content {
+	clear: both;
+}
+.image-attachment .entry-content .entry-attachment {
+	background: #eee;
+	margin: 0 0 1em;
+	padding: 1em;
+	text-align: center;
+}
+.image-attachment .entry-content .attachment {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* Aside Posts */
+.format-aside .entry-header {
+	display: none;
+}
+.single .format-aside .entry-header {
+	display: block;
+}
+.format-aside .entry-content,
+.format-aside .entry-summary {
+	padding-top: 1em;
+}
+.single .format-aside .entry-content,
+.single .format-aside .entry-summary {
+	padding-top: 0;
+}
+
+/* Gallery Posts */
+.format-gallery .gallery-thumb {
+	float: left;
+	margin: 0 1em 0 0;
+}
+
+/* Image Posts */
+.format-image .entry-header {
+	display: none;
+}
+.single .format-image .entry-header {
+	display: block;
+}
+.format-image .entry-content,
+.format-image .entry-summary {
+	padding-top: 1em;
+}
+.single .format-image .entry-content,
+.single .format-image .entry-summary {
+	padding-top: 0;
+}
+
+
+/* =Images
+-------------------------------------------------------------- */
+
+a img {
+	border: none;
+}
+p img {
+	margin-bottom: 0.5em; /* a small bottom margin prevents content floating under images */
+}
+/*
+Resize images to fit the main content area.
+- Applies only to images uploaded via WordPress by targeting size-* classes.
+- Other images will be left alone. Use "size-auto" class to apply to other images.
+*/
+img.size-auto,
+img.size-full,
+img.size-large,
+img.size-medium,
+.attachment img,
+.widget-area img,
+.wp-caption {
+	max-width: 100%; /* When images are too wide for containing element, force them to fit. */
+	height: auto; /* Override height to match resized width for correct aspect ratio. */
+}
+img.alignleft {
+	margin-right: 1em;
+}
+img.alignright {
+	margin-left: 1em;
+}
+.wp-caption {
+	padding: .5em;
+	text-align: center;
+}
+.wp-caption img {
+	margin: .25em;
+}
+.wp-caption .wp-caption-text {
+	margin: .5em;
+}
+.gallery-caption {
+}
+.wp-smiley {
+	margin: 0;
+}
+
+
+/* =Forms
+-------------------------------------------------------------- */
+
+#searchform label {
+	display: none;
+}
+#searchform input#s {
+	width: 60%;
+}
+input[type=text],
+input#s {
+	margin: 0 1em 0 0;
+	width: 60%;
+}
+textarea {
+	width: 80%;
+}
+
+/* Class for labelling required form items */
+.required {
+	color: #cc0033;
+}
+
+
+/* =Comments
+-------------------------------------------------------------- */
+
+article.comment {
+	display: block;
+	line-height: 1.5em;
+}
+#respond input[type=text] {
+	display: block;
+	width: 60%;
+}
+#respond textarea {
+	display: block;
+	margin: 0 0 1em;
+	width: 80%;
+}
+#respond .form-allowed-tags {
+	clear: both;
+	width: 80%;
+}
+#respond .form-allowed-tags code {
+	display: block;
+}
+
+
+/* =Widgets
+-------------------------------------------------------------- */
+
+.widget {
+	display: block;
+	line-height: 1.6em;
+	font-size: 15px;
+}
+
+.widget ul {
+	list-style: none;
+	margin-left: -30px;
+	margin-bottom: 30px;
+	margin-top: -10px;
+	}
+	
+.widget h1 {
+	color: #333;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.widget a {
+	color: #666;
+	text-decoration: none;
+}
+
+.widget a:hover {
+	color: #ff0000;
+	-webkit-transition:color .5s ease-in;  
+   -moz-transition:color .5s ease-in;  
+   -o-transition:color .5s ease-in;  
+   transition:color .5s ease-in;
+}
+
+.widget-area .widget_search {
+	overflow: hidden;
+	margin-bottom: 30px;
+	margin-top: -15px;
+}
+
+.widget-area .widget_search input {
+	float: left;
+}
+
+.widget_search input {
+}
+
+.widget_search input:hover {border-color: #bbb;}
+.widget_search input:active {border-style: inset;}
+.widget_search input:focus {
+	border-color: #ddd;
+	color: #333;}
+
+
+#searchsubmit {
+	background: rgb(238,238,238); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(221,221,221,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(221,221,221,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+	height: 30px;
+	border:1px solid #ccc;
+	font-size: 15px;
+	text-shadow: 0px 1px 0px #fff;
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px #666;
+}
+#s {
+   height: 25px;
+   font-size: 15px;
+}
+
+#s:hover {
+	
+}
+
+#searchsubmit:active {
+	background: rgb(221,221,221); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(221,221,221,1) 0%, rgba(238,238,238,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(221,221,221,1)), color-stop(100%,rgba(238,238,238,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(221,221,221,1) 0%,rgba(238,238,238,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(221,221,221,1) 0%,rgba(238,238,238,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(221,221,221,1) 0%,rgba(238,238,238,1) 100%); /* IE10+ */
+background: linear-gradient(top,  rgba(221,221,221,1) 0%,rgba(238,238,238,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dddddd', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+	box-shadow: inset 0px 0px 2px #ddd;
+	-webkit-box-shadow:inset 0px 0px 2px rgba(0,0,0,.5);
+-moz-box-shadow:inset 0px 0px 2px rgba(0,0,0,.5);
+	}
+
+/* =Footer
+-------------------------------------------------------------- */
