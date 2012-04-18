@@ -527,8 +527,6 @@ textarea {
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;
-	position: absolute;
-	left: -50px;
 	border: 1px solid #ccc;
 }
 #comments ul.children article {
