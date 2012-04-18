@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package Toolbox
- * @since Toolbox 0.1
+ * @package saayana
+ * @since saayana 0.1
  */
 ?>
 
@@ -13,10 +13,10 @@
 
 	<footer id="colophon" role="contentinfo">
 		<div id="site-generator">
-			<?php do_action( 'toolbox_credits' ); ?>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'toolbox' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'toolbox' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'toolbox' ), 'WordPress' ); ?></a>
+			<?php do_action( 'saayana_credits' ); ?>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'saayana' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'saayana' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'saayana' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'toolbox' ), 'Toolbox', '<a href="http://automattic.com/" rel="designer">Automattic</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'saayana' ), 'saayana', '<a href="http://adnanomatic.com/" rel="designer">Adnanomatic</a>' ); ?>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

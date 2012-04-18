@@ -1,33 +1,33 @@
 <?php
 /**
- * @package Toolbox
+ * @package saayana
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'toolbox' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'saayana' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<div class="entry-meta">
-			<?php toolbox_posted_on(); ?>
+			<?php saayana_posted_on(); ?>
 			<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'toolbox' ) );
-				if ( $categories_list && toolbox_categorized_blog() ) :
+				$categories_list = get_the_category_list( __( ', ', 'saayana' ) );
+				if ( $categories_list && saayana_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'under %1$s', 'toolbox' ), $categories_list ); ?>
+				<?php printf( __( 'under %1$s', 'saayana' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'toolbox' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'saayana' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tag-links">
-				<?php printf( __( 'and tagged %1$s', 'toolbox' ), $tags_list ); ?>
+				<?php printf( __( 'and tagged %1$s', 'saayana' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
@@ -40,8 +40,8 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content">
-		<?php the_content( __( 'Read More', 'toolbox' ) ); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'toolbox' ), 'after' => '</div>' ) ); ?>
+		<?php the_content( __( 'Read More', 'saayana' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'saayana' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 

@@ -2,8 +2,8 @@
 /**
  * The Template for displaying all single posts.
  *
- * @package Toolbox
- * @since Toolbox 0.1
+ * @package saayana
+ * @since saayana 0.1
  */
 
 get_header(); ?>
@@ -13,11 +13,11 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php toolbox_content_nav( 'nav-above' ); ?>
+				<?php saayana_content_nav( 'nav-above' ); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php toolbox_content_nav( 'nav-below' ); ?>
+				<?php saayana_content_nav( 'nav-below' ); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template

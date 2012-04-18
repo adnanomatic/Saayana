@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Toolbox
+ * @package saayana
  */
 ?>
 
@@ -9,50 +9,36 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
-			<?php toolbox_posted_on(); ?>
+			<?php saayana_posted_on(); ?>
+			<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
+			<?php
+				/* translators: used between list items, there is a space after the comma */
+				$categories_list = get_the_category_list( __( ', ', 'saayana' ) );
+				if ( $categories_list && saayana_categorized_blog() ) :
+			?>
+			<span class="cat-links">
+				<?php printf( __( 'under %1$s', 'saayana' ), $categories_list ); ?>
+			</span>
+			<?php endif; // End if categories ?>
+
+			<?php
+				/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list( '', __( ', ', 'saayana' ) );
+				if ( $tags_list ) :
+			?>
+			<span class="tag-links">
+				<?php printf( __( 'and tagged %1$s', 'saayana' ), $tags_list ); ?>
+			</span>
+			<?php endif; // End if $tags_list ?>
+		<?php endif; // End if 'post' == get_post_type() ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'toolbox' ), 'after' => '</div>' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'saayana' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'toolbox' ) );
-
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', ', ' );
-
-			if ( ! toolbox_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'toolbox' );
-				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'toolbox' );
-				}
-
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'toolbox' );
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'toolbox' );
-				}
-
-			} // end check for categories on this blog
-
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink(),
-				the_title_attribute( 'echo=0' )
-			);
-		?>
-
-		<?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-meta -->
+		</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
